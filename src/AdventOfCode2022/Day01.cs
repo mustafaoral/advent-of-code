@@ -1,13 +1,13 @@
 ﻿namespace AdventOfCode2022;
 
-public class Day01
+public class Day01 : IStringInputIntegerOutputChallenge
 {
-    public static int Part1(string input)
+    public int Part1(string input)
     {
         return GetElves(input).MaxBy(x => x.TotalCalories).TotalCalories;
     }
 
-    public static int Part2(string input)
+    public int Part2(string input)
     {
         return GetElves(input).OrderByDescending(x => x.TotalCalories).Take(3).Sum(x => x.TotalCalories);
     }

@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2022;
 
-public class Day03
+public class Day03 : IStringInputIntegerOutputChallenge
 {
     private static Dictionary<char, int> _priorityMap;
 
@@ -12,10 +12,10 @@ public class Day03
         _priorityMap = lowerCaseMap.Union(upperCaseMap).ToDictionary(x => x.Key, x => x.Value);
     }
 
-    public static int Part1(string input)
+    public int Part1(string input)
     {
         return input
-            .Split(Environment.NewLine)
+            .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
             .SelectMany(line =>
             {
                 var items = line.SplitToTokensInLength(line.Length / 2).Select(x => x.ToCharArray());
@@ -26,10 +26,10 @@ public class Day03
             .Sum();
     }
 
-    public static int Part2(string input)
+    public int Part2(string input)
     {
         return input
-            .Split(Environment.NewLine)
+            .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
             .Select((line, i) => new { Index = i, Line = line })
             .GroupBy(x => x.Index / 3)
             .Select(grouping =>

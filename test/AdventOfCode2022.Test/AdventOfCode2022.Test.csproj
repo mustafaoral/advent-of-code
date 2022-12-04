@@ -22,21 +22,35 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\AdventOfCode2022\AdventOfCode2022.csproj" />
+    <ProjectReference Include="..\..\src\AdventOfCode\AdventOfCode.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Test\AdventOfCode.Test.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Input.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Input.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Input.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Input.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <None Update="input\day02.actual.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\day02.test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\day01.actual.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\day01.test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\day03.actual.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\day03.test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\day04.actual.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\day04.test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

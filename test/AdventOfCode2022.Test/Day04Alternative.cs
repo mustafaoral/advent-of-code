@@ -1,36 +1,28 @@
 namespace AdventOfCode2022.Test;
 
-public class Day04Alternative
+public class Day04Alternative : StringInputIntegerOutputTest
 {
-    [Fact]
-    public void Part1Test()
+    public Day04Alternative() : base(alternativeSutType: typeof(AdventOfCode2022.Day04Alternative))
     {
-        var result = AdventOfCode2022.Day04Alternative.Part1(Input.Day04_Test);
-
-        Assert.Equal(2, result);
     }
 
-    [Fact]
-    public void Part1Actual()
+    protected override void Part1AssertTest(int output)
     {
-        var result = AdventOfCode2022.Day04Alternative.Part1(Input.Day04_Actual);
-
-        Assert.Equal(595, result);
+        Assert.Equal(2, output);
     }
 
-    [Fact]
-    public void Part2Test()
+    protected override void Part1AssertActual(int output)
     {
-        var result = AdventOfCode2022.Day04Alternative.Part2(Input.Day04_Test);
-
-        Assert.Equal(4, result);
+        Assert.Equal(595, output);
     }
 
-    [Fact]
-    public void Part2Actual()
+    protected override void Part2AssertTest(int output)
     {
-        var result = AdventOfCode2022.Day04Alternative.Part2(Input.Day04_Actual);
+        Assert.Equal(4, output);
+    }
 
-        Assert.Equal(952, result);
+    protected override void Part2AssertActual(int output)
+    {
+        Assert.Equal(952, output);
     }
 }

@@ -1,14 +1,14 @@
 ﻿namespace AdventOfCode2022;
 
-public class Day04Alternative
+public class Day04Alternative : IStringInputIntegerOutputChallenge
 {
-    public static int Part1(string input)
+    public int Part1(string input)
     {
         return GetAssignmentPairs(input)
             .Count(x => x.HasFullOverlap());
     }
 
-    public static int Part2(string input)
+    public int Part2(string input)
     {
         return GetAssignmentPairs(input)
             .Count(x => x.HasAnyOverlap());
@@ -17,7 +17,7 @@ public class Day04Alternative
     private static AssignmentPair[] GetAssignmentPairs(string input)
     {
         return input
-            .Split(Environment.NewLine)
+            .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
             .Select(line =>
             {
                 var tokens = line.Split(",").Select(x => x.Split("-")).ToArray();

@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Moss.Extensions" Version="0.6.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdventOfCode\AdventOfCode.csproj" />
+    <ProjectReference Include="..\..\src\AdventOfCode\AdventOfCode.csproj" />
   </ItemGroup>
 
 </Project>

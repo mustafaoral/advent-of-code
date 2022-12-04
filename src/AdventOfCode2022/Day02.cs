@@ -1,8 +1,8 @@
 ﻿namespace AdventOfCode2022;
 
-public class Day02
+public class Day02 : IStringInputIntegerOutputChallenge
 {
-    public static int Part1(string input)
+    public int Part1(string input)
     {
         return input
             .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
@@ -20,7 +20,7 @@ public class Day02
             .Sum();
     }
 
-    public static int Part2(string input)
+    public int Part2(string input)
     {
         return input
             .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
