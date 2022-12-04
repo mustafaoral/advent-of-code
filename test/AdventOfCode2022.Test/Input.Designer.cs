@@ -341,5 +341,68 @@ namespace AdventOfCode2022.Test {
                 return ResourceManager.GetString("Day03-Test", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 23-33,24-65
+        ///10-24,23-88
+        ///71-92,18-71
+        ///2-2,10-95
+        ///24-26,25-66
+        ///19-93,36-99
+        ///12-99,5-13
+        ///13-88,14-94
+        ///4-85,5-84
+        ///78-88,79-87
+        ///13-82,13-83
+        ///3-98,3-99
+        ///27-69,28-89
+        ///24-47,23-66
+        ///43-48,29-49
+        ///2-99,2-98
+        ///3-77,21-65
+        ///10-90,89-93
+        ///64-75,63-75
+        ///97-99,1-97
+        ///48-65,49-64
+        ///18-26,25-28
+        ///85-86,26-85
+        ///82-89,69-83
+        ///21-93,93-98
+        ///73-79,46-81
+        ///33-52,32-51
+        ///1-99,99-99
+        ///11-36,34-40
+        ///31-88,32-89
+        ///9-19,18-35
+        ///9-84,83-83
+        ///34-82,4-83
+        ///33-33,24-33
+        ///34-83,83-90
+        ///11-86,10-86
+        ///48-48,3-50
+        ///8-92,9-91
+        ///16-38,15-37
+        ///4-84,5-93
+        ///70-75,41-79        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Day04_Actual {
+            get {
+                return ResourceManager.GetString("Day04-Actual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2-4,6-8
+        ///2-3,4-5
+        ///5-7,7-9
+        ///2-8,3-7
+        ///6-6,4-6
+        ///2-6,4-8.
+        /// </summary>
+        internal static string Day04_Test {
+            get {
+                return ResourceManager.GetString("Day04-Test", resourceCulture);
+            }
+        }
     }
 }
