@@ -68,19 +68,6 @@ public class Day04Alternative : IStringInputIntegerOutputChallenge
             return result.IndexOf(1) != -1;
         }
 
-        private int[] CompareAsBitMap()
-        {
-            Span<int> a = stackalloc int[_length];
-            Span<int> b = stackalloc int[_length];
-            Span<int> result = stackalloc int[_length];
-
-            Populate(a, ElfA);
-            Populate(b, ElfB);
-            BitwiseAnd(a, b, result);
-
-            return result.ToArray();
-        }
-
         private void BitwiseAnd(Span<int> a, Span<int> b, Span<int> result)
         {
             for (int i = 0; i < _length; i++)
