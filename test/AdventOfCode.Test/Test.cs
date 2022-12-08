@@ -11,24 +11,17 @@ public abstract class Test<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2>
 
     protected Test()
     {
-        Day = GetDay();
+        var type = GetType();
 
-        var year = Regex.Match(GetType().Assembly.GetName().FullName, @"AdventOfCode(?<year>\d{4})\.Test").Groups["year"].Value;
+        Day = int.Parse(Regex.Match(type.Name, @"Day(?<day>\d{2}).*").Groups["day"].Value);
+
+        var year = Regex.Match(type.Assembly.GetName().FullName, @"AdventOfCode(?<year>\d{4})\.Test").Groups["year"].Value;
 
         var assembly = Assembly.LoadFrom($"AdventOfCode{year}.dll");
-        var sutType = assembly.GetType($"{assembly.GetName().Name}.Day{Day:00}");
+        var sutType = assembly.GetType($"{assembly.GetName().Name}.{type.Name}");
 
         _sut = Activator.CreateInstance(sutType) as IDayChallenge<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2>;
     }
-
-    protected Test(Type alternativeSutType)
-    {
-        Day = GetDay();
-
-        _sut = Activator.CreateInstance(alternativeSutType) as IDayChallenge<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2>;
-    }
-
-    private int GetDay() => int.Parse(Regex.Match(GetType().Name, @"Day(?<day>\d{2}).*").Groups["day"].Value);
 
     [Fact]
     public void Part1() => Part1Assert(_sut.Part1(GetInputPart1()));

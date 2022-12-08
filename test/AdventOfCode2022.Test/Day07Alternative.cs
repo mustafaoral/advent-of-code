@@ -2,10 +2,6 @@ namespace AdventOfCode2022.Test;
 
 public class Day07Alternative : SharedStringInputTest<int, int>
 {
-    public Day07Alternative() : base(alternativeSutType: typeof(AdventOfCode2022.Day07Alternative))
-    {
-    }
-
     protected override void Part1Assert(int output)
     {
         Assert.Equal(1206825, output);
