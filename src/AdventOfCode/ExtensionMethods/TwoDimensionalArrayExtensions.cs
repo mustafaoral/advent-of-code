@@ -19,7 +19,7 @@ public static class TwoDimensionalArrayExtensions
 
     public static T[] GetColumn<T>(this T[,] array, int columnIndex)
     {
-        var height = array.GetLength(1);
+        var height = array.GetLength(0);
 
         var column = new T[height];
 
@@ -33,7 +33,7 @@ public static class TwoDimensionalArrayExtensions
 
     public static T[] GetRow<T>(this T[,] array, int rowIndex)
     {
-        var width = array.GetLength(0);
+        var width = array.GetLength(1);
 
         var row = new T[width];
 
@@ -47,7 +47,7 @@ public static class TwoDimensionalArrayExtensions
 
     public static T[] GetDiagonal<T>(this T[,] array, bool increasingIndex)
     {
-        var width = array.GetLength(0);
+        var width = array.GetLength(1);
 
         var diagonal = new T[width];
 
@@ -71,8 +71,8 @@ public static class TwoDimensionalArrayExtensions
 
     public static IEnumerable<(int RowIndex, int ColumnIndex, T Item)> SelectIndexed<T>(this T[,] array)
     {
-        var width = array.GetLength(0);
-        var height = array.GetLength(1);
+        var height = array.GetLength(0);
+        var width = array.GetLength(1);
 
         for (int i = 0; i < height; i++)
         {
