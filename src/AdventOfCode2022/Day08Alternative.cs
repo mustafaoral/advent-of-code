@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2022;
 
-public class Day08Alternative : IStringInputIntegerOutputChallenge
+public class Day08Alternative : IStringInputIntegerOutputPuzzle
 {
     public int Part1(string input)
     {

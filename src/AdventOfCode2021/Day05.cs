@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2021;
 
-public class Day05 : IStringInputIntegerOutputChallenge
+public class Day05 : IStringInputIntegerOutputPuzzle
 {
     public int Part1(string input) => GetOutput(input, ventSegments => ventSegments.Where(x => !x.IsDiagonal));
 

@@ -2,7 +2,7 @@
 
 namespace AdventOfCode2022;
 
-public class Day07Alternative : IStringInputIntegerOutputChallenge
+public class Day07Alternative : IStringInputIntegerOutputPuzzle
 {
     public int Part1(string input)
     {

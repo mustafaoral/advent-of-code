@@ -5,7 +5,7 @@ namespace AdventOfCode.Test;
 
 public abstract class Test<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2>
 {
-    private readonly IDayChallenge<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2> _sut;
+    private readonly IPuzzle<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2> _sut;
     
     protected readonly int Day;
 
@@ -20,7 +20,7 @@ public abstract class Test<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2>
         var assembly = Assembly.LoadFrom($"AdventOfCode{year}.dll");
         var sutType = assembly.GetType($"{assembly.GetName().Name}.{type.Name}");
 
-        _sut = Activator.CreateInstance(sutType) as IDayChallenge<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2>;
+        _sut = Activator.CreateInstance(sutType) as IPuzzle<TInputPart1, TOutputPart1, TInputPart2, TOutputPart2>;
     }
 
     [Fact]

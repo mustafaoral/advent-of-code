@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2022;
 
-public class Day03 : IStringInputIntegerOutputChallenge
+public class Day03 : IStringInputIntegerOutputPuzzle
 {
     private static Dictionary<char, int> _priorityMap;
 
