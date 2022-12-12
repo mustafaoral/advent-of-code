@@ -17,4 +17,17 @@ public static class IEnumerableOfTExtensions
             yield return enumerable.Skip(i++).Take(size);
         }
     }
+
+    public static IEnumerable<(T First, T Second)> Pairwise<T>(this IEnumerable<T> enumerable)
+    {
+        var count = enumerable.Count();
+        var i = 0;
+
+        while (i <= count - 2)
+        {
+            var items = enumerable.Skip(i++).Take(2);
+
+            yield return (items.ElementAt(0), items.ElementAt(1));
+        }
+    }
 }
