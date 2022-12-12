@@ -43,10 +43,7 @@ public class Day09 : IStringInputIntegerOutputChallenge
                 headPosition.ApplyMove(move);
                 tailPositions.First().FollowHeadPosition(headPosition);
 
-                foreach (var window in tailPositions.SlidingWindow(2))
-                {
-                    window.ElementAt(1).FollowHeadPosition(window.ElementAt(0));
-                }
+                tailPositions.Pairwise(x => x.Second.FollowHeadPosition(x.First));
 
                 tailPositionHistory.Add(tailPositions.Last().ClonePosition());
             }

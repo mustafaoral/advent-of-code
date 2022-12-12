@@ -47,10 +47,7 @@ public class Day10 : IStringInputChallenge<int, string>
             })
             .ToArray();
 
-        foreach (var (First, Second) in instructions.Pairwise())
-        {
-            Second.StartCycle = First.StartCycle + First.Duration;
-        }
+        instructions.Pairwise(x => x.Second.StartCycle = x.First.StartCycle + x.First.Duration);
 
         return instructions;
     }

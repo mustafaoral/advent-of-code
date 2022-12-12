@@ -4,12 +4,12 @@ public class Day01 : IStringInputIntegerOutputChallenge
 {
     public int Part1(string input)
     {
-        return GetReadings(input).SlidingWindow(2).Count(x => x.ElementAt(1) > x.ElementAt(0));
+        return GetReadings(input).PairwiseCount(x => x.Second > x.First);
     }
 
     public int Part2(string input)
     {
-        return GetReadings(input).SlidingWindow(3).Select(x => x.Sum()).SlidingWindow(2).Count(x => x.ElementAt(1) > x.ElementAt(0));
+        return GetReadings(input).SlidingWindow(3, x => x.Sum()).PairwiseCount(x => x.Second > x.First);
     }
 
     private static int[] GetReadings(string input)
