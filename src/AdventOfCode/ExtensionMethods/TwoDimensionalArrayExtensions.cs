@@ -131,4 +131,18 @@ public static class TwoDimensionalArrayExtensions
 
         return sb.ToString();
     }
+
+    public static void SetAllItemsTo<T>(this T[,] array, T value)
+    {
+        var height = array.GetLength(0);
+        var width = array.GetLength(1);
+
+        for (int i = 0; i < height; i++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                array[i, j] = value;
+            }
+        }
+    }
 }
