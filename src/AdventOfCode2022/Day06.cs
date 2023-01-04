@@ -2,15 +2,8 @@
 
 public class Day06 : IStringInputIntegerOutputPuzzle
 {
-    public int Part1(string input)
-    {
-        return GetIndex(input.Trim(), packetLength: 4);
-    }
-
-    public int Part2(string input)
-    {
-        return GetIndex(input.Trim(), packetLength: 14);
-    }
+    public int Part1(string input) => GetIndex(input.Trim(), packetLength: 4);
+    public int Part2(string input) => GetIndex(input.Trim(), packetLength: 14);
 
     private static int GetIndex(string input, int packetLength)
     {

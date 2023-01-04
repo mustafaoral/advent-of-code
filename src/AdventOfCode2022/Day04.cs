@@ -2,17 +2,8 @@
 
 public class Day04 : IStringInputIntegerOutputPuzzle
 {
-    public int Part1(string input)
-    {
-        return GetAssignmentPairs(input)
-            .Count(x => x.HasFullOverlap());
-    }
-
-    public int Part2(string input)
-    {
-        return GetAssignmentPairs(input)
-            .Count(x => x.HasAnyOverlap());
-    }
+    public int Part1(string input) => GetAssignmentPairs(input).Count(x => x.HasFullOverlap());
+    public int Part2(string input) => GetAssignmentPairs(input).Count(x => x.HasAnyOverlap());
 
     private static AssignmentPair[] GetAssignmentPairs(string input)
     {
