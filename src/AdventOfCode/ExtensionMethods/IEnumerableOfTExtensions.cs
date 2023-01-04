@@ -42,7 +42,7 @@ public static class IEnumerableOfTExtensions
         }
     }
 
-    public static void Pairwise<TInput>(this IEnumerable<TInput> enumerable, Action<(TInput First, TInput Second)> pairwiseOperation)
+    public static void PairwiseExecute<TInput>(this IEnumerable<TInput> enumerable, Action<(TInput First, TInput Second)> pairwiseOperation)
     {
         var count = enumerable.Count();
         var i = 0;

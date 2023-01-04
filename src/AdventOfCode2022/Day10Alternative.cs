@@ -40,7 +40,7 @@ public class Day10Alternative : IStringInputPuzzle<int, string>
             })
             .ToArray();
 
-        instructions.Pairwise(x => x.Second.StartCycle = x.First.StartCycle + x.First.Duration);
+        instructions.PairwiseExecute(x => x.Second.StartCycle = x.First.StartCycle + x.First.Duration);
 
         return instructions;
     }

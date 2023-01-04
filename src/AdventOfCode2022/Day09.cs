@@ -43,7 +43,7 @@ public class Day09 : IStringInputIntegerOutputPuzzle
                 headPosition.ApplyMove(move);
                 tailPositions.First().FollowHeadPosition(headPosition);
 
-                tailPositions.Pairwise(x => x.Second.FollowHeadPosition(x.First));
+                tailPositions.PairwiseExecute(x => x.Second.FollowHeadPosition(x.First));
 
                 tailPositionHistory.Add(tailPositions.Last().ClonePosition());
             }
