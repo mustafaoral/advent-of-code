@@ -122,7 +122,7 @@ public class Day12 : IStringInputPuzzle<int, int>
             }
         }
 
-        public void ClearHikingHistory() => _visited.SetAllItemsTo(false);
+        public void ClearHikingHistory() => _visited.Fill(false);
 
         private Position[] GetNextPositions(Position position)
         {

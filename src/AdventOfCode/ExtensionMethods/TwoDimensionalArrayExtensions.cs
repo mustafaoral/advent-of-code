@@ -132,7 +132,7 @@ public static class TwoDimensionalArrayExtensions
         return sb.ToString();
     }
 
-    public static void SetAllItemsTo<T>(this T[,] array, T value)
+    public static void Fill<T>(this T[,] array, T value)
     {
         var height = array.GetLength(0);
         var width = array.GetLength(1);
