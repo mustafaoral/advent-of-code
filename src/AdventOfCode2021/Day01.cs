@@ -9,7 +9,7 @@ public class Day01 : IStringInputIntegerOutputPuzzle
 
     public int Part2(string input)
     {
-        return GetReadings(input).SlidingWindow(3, x => x.Sum()).PairwiseCount(x => x.Second > x.First);
+        return GetReadings(input).Windowed(3).Select(x => x.Sum()).PairwiseCount(x => x.Second > x.First);
     }
 
     private static int[] GetReadings(string input)
