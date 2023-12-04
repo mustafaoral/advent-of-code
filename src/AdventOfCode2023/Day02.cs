@@ -69,15 +69,10 @@ public class Day02 : IStringInputIntegerOutputPuzzle
         public int Blue { get; init; }
     }
 
-    private class Game
+    private class Game(int id)
     {
-        public int Id { get; }
-        public List<Round> Rounds { get; } = new();
-
-        public Game(int id)
-        {
-            Id = id;
-        }
+        public int Id { get; } = id;
+        public List<Round> Rounds { get; } = [];
 
         public void AddRound(int? red, int? green, int? blue)
         {
