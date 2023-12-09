@@ -15,35 +15,15 @@ public static partial class IEnumerableOfTExtensions
         }
     }
 
-    public static void PairwiseExecute<TInput>(this IEnumerable<TInput> enumerable, Action<(TInput First, TInput Second)> pairwiseOperation)
+    public static void Pairwise<T>(this IEnumerable<T> enumerable, Action<(T First, T Second)> pairwiseOperation)
     {
-        var count = enumerable.Count();
-        var i = 0;
-
-        while (i <= count - 2)
+        foreach (var item in enumerable.Pairwise())
         {
-            var items = enumerable.Skip(i++).Take(2).ToArray();
-
-            pairwiseOperation((items.ElementAt(0), items.ElementAt(1)));
+            pairwiseOperation(item);
         }
     }
 
-    public static int PairwiseCount<TInput>(this IEnumerable<TInput> enumerable, Predicate<(TInput First, TInput Second)> predicate)
-    {
-        var enumerableCount = enumerable.Count();
-        var i = 0;
-        var count = 0;
+    public static IEnumerable<T> Pairwise<T>(this IEnumerable<T> enumerable, Func<(T First, T Second), T> pairwiseOperation) => enumerable.Pairwise().Select(pairwiseOperation);
 
-        while (i <= enumerableCount - 2)
-        {
-            var items = enumerable.Skip(i++).Take(2).ToArray();
-
-            if (predicate((items.ElementAt(0), items.ElementAt(1))))
-            {
-                count++;
-            };
-        }
-
-        return count;
-    }
+    public static int PairwiseCount<T>(this IEnumerable<T> enumerable, Func<(T First, T Second), bool> predicate) => enumerable.Pairwise().Count(predicate);
 }

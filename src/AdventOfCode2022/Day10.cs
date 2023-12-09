@@ -47,7 +47,7 @@ public class Day10 : IStringInputPuzzle<int, string>
             })
             .ToArray();
 
-        instructions.PairwiseExecute(x => x.Second.StartCycle = x.First.StartCycle + x.First.Duration);
+        instructions.Pairwise(x => x.Second.StartCycle = x.First.StartCycle + x.First.Duration);
 
         return instructions;
     }
