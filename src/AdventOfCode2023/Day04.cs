@@ -42,10 +42,7 @@ public class Day04 : IStringInputIntegerOutputPuzzle
             {
                 var sides = line.Split(":")[1].Split("|");
 
-                var winningNumbers = Regex.Matches(sides[0], @"\d+").Select(x => int.Parse(x.Value)).ToArray();
-                var numbers = Regex.Matches(sides[1], @"\d+").Select(x => int.Parse(x.Value)).ToArray();
-
-                return new Card(winningNumbers, numbers);
+                return new Card(sides[0].MatchIntArray(), sides[1].MatchIntArray());
             })
             .ToArray();
     }
