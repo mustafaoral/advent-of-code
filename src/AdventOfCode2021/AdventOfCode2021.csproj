@@ -1,13 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Moss.Extensions" Version="0.8.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode\AdventOfCode.csproj" />

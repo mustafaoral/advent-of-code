@@ -1,0 +1,7 @@
+<Project>
+  <ItemGroup>
+    <Using Include="AdventOfCode.Test"/>
+    <Using Include="Moss.Extensions" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+</Project>
