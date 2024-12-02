@@ -1,14 +1,3 @@
 namespace AdventOfCode2023.Test;
 
-public class Day07 : SharedStringInputTest<int, int>
-{
-    protected override void Part1Assert(int output)
-    {
-        Assert.Equal(250474325, output);
-    }
-
-    protected override void Part2Assert(int output)
-    {
-        Assert.Equal(248909434, output);
-    }
-}
+public class Day07() : SharedStringInputTestWithAssertion<int, int>(expectedOutputPart1: 250474325, expectedOutputPart2: 248909434);
